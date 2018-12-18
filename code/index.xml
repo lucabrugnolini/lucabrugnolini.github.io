@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codes on Luca Brugnolini</title>
+    <link>https://lucabrugnolini.github.io/code/</link>
+    <description>Recent content in Codes on Luca Brugnolini</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Luca Brugnolini</copyright>
+    <lastBuildDate>Thu, 11 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://lucabrugnolini.github.io/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Julia Packages</title>
+      <link>https://lucabrugnolini.github.io/code/code/</link>
+      <pubDate>Thu, 11 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/code/code/</guid>
+      <description> VectorAutoregressions.jl: Vector Autoregressive (VAR) models in Julia.
+ ForecastingCombinations.jl: forecasting using a combinatoric approach and exploiting parallel computing in Julia.
+  </description>
+    </item>
+    
+    <item>
+      <title>ForecastingCombinations.jl</title>
+      <link>https://lucabrugnolini.github.io/code/nfp/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/code/nfp/</guid>
+      <description>Forecasting Variables using a combinatoric approach and exploiting parallel computing in Julia (ForecastingCombinations.jl) Installation Pkg.clone(&amp;quot;https://github.com/lucabrugnolini/ForecastingCombinations.jl&amp;quot;)  Documentation The procedure is described in Brugnolini L. (2018). The application in the paper is on predicting the probability of having inflation around the European Central Bank&amp;rsquo;s target.
+Introduction Given a (balanced) dataset of K macroeconomic variables, the objective is to select the best model to predict future values of a target variable. The selection procedure consists in (i) select the best iBest variables according to several out-of-sample criteria and then use these variables in models that use their combination.</description>
+    </item>
+    
+    <item>
+      <title>VAR.jl</title>
+      <link>https://lucabrugnolini.github.io/code/var/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/code/var/</guid>
+      <description>Vector autoregressive models for Julia (VAR.jl) Installation Pkg.clone(&amp;quot;https://github.com/lucabrugnolini/VectorAutoregressions.jl&amp;quot;)  Introduction This package is a work in progress for the estimation and identification of Vector Autoregressive (VAR) models.
+Status VAR VAR(1) form Lag-length selection AIC AICC BIC HQC VAR impulse response function (IRFs) Identification Reduce form Cholesky Long-run restrictions Sign restrictions Heteroskedasticity External instruments (ex. high-frequency,narrative)  Confidence bands Asymptotic Bootstrap Bootstrap-after-bootstrap  Forecasting BVAR FAVAR  Local projection IRFs Lag-length selection Confidence bands Standard Bootstrap  Bayesian Local Projection   Example ## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf.</description>
+    </item>
+    
+  </channel>
+</rss>

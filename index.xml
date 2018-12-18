@@ -1,14 +1,156 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Academic on Academic</title>
+    <title>Luca Brugnolini on Luca Brugnolini</title>
     <link>https://lucabrugnolini.github.io/</link>
-    <description>Recent content in Academic on Academic</description>
+    <description>Recent content in Luca Brugnolini on Luca Brugnolini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
+    <copyright>&amp;copy; 2017 Luca Brugnolini</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Central Bank of Malta Annual Research Workshop</title>
+      <link>https://lucabrugnolini.github.io/talk/cbm_workshop_2018/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/cbm_workshop_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bilkent University</title>
+      <link>https://lucabrugnolini.github.io/talk/bilkent_2018/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/bilkent_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Central Bank of Sri Lanka</title>
+      <link>https://lucabrugnolini.github.io/talk/cbsl_conference_2018/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/cbsl_conference_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measuring Euro Area Monetary Policy</title>
+      <link>https://lucabrugnolini.github.io/publication/article_1-_-monetary_shock/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/publication/article_1-_-monetary_shock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forecasting Deflation Probability in The EA: A Combinatoric Approach</title>
+      <link>https://lucabrugnolini.github.io/publication/article_3_forecasting_inflation/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/publication/article_3_forecasting_inflation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About Local Projection Impulse Response Function Reliability</title>
+      <link>https://lucabrugnolini.github.io/publication/article_2_about_local_projection/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/publication/article_2_about_local_projection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fiscal Compact and Debt Consolidation Dynamics</title>
+      <link>https://lucabrugnolini.github.io/publication/article_4_fiscal_compact/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/publication/article_4_fiscal_compact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CBM Research Seminar</title>
+      <link>https://lucabrugnolini.github.io/talk/cbm_seminar/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/cbm_seminar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CEF 2018</title>
+      <link>https://lucabrugnolini.github.io/talk/cef2018/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/cef2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Governor&#39;s Workshop</title>
+      <link>https://lucabrugnolini.github.io/talk/gw/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/gw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RBNZ Conference on Macro-Finance</title>
+      <link>https://lucabrugnolini.github.io/talk/rbnz_macrofinance_2018/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/rbnz_macrofinance_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IAAE 2018</title>
+      <link>https://lucabrugnolini.github.io/talk/iaae2018/</link>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/iaae2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Julia Packages</title>
+      <link>https://lucabrugnolini.github.io/code/code/</link>
+      <pubDate>Thu, 11 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/code/code/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/lucabrugnolini/VectorAutoregressions.jl&#34; target=&#34;_blank&#34;&gt;VectorAutoregressions.jl:&lt;/a&gt;
+Vector Autoregressive (VAR) models in Julia.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/lucabrugnolini/NFP.jl&#34; target=&#34;_blank&#34;&gt;ForecastingCombinations.jl:&lt;/a&gt;
+forecasting using a combinatoric approach and exploiting parallel computing in Julia.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Is Anything Predictable in Macroeconomic Surprises?</title>
+      <link>https://lucabrugnolini.github.io/publication/article_5_macro_surprise/</link>
+      <pubDate>Wed, 03 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/publication/article_5_macro_surprise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bayesian Cubic Local Projection</title>
+      <link>https://lucabrugnolini.github.io/publication/article_6_bayesian_cubic_local_projection/</link>
+      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/publication/article_6_bayesian_cubic_local_projection/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

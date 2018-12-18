@@ -1,16 +1,97 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recent &amp; Upcoming Talks on Academic</title>
+    <title>Upcoming and Recent Talks on Luca Brugnolini</title>
     <link>https://lucabrugnolini.github.io/talk/</link>
-    <description>Recent content in Recent &amp; Upcoming Talks on Academic</description>
+    <description>Recent content in Upcoming and Recent Talks on Luca Brugnolini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
+    <copyright>&amp;copy; 2017 Luca Brugnolini</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://lucabrugnolini.github.io/talk/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Central Bank of Malta Annual Research Workshop</title>
+      <link>https://lucabrugnolini.github.io/talk/cbm_workshop_2018/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/cbm_workshop_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bilkent University</title>
+      <link>https://lucabrugnolini.github.io/talk/bilkent_2018/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/bilkent_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Central Bank of Sri Lanka</title>
+      <link>https://lucabrugnolini.github.io/talk/cbsl_conference_2018/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/cbsl_conference_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CBM Research Seminar</title>
+      <link>https://lucabrugnolini.github.io/talk/cbm_seminar/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/cbm_seminar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CEF 2018</title>
+      <link>https://lucabrugnolini.github.io/talk/cef2018/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/cef2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Governor&#39;s Workshop</title>
+      <link>https://lucabrugnolini.github.io/talk/gw/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/gw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RBNZ Conference on Macro-Finance</title>
+      <link>https://lucabrugnolini.github.io/talk/rbnz_macrofinance_2018/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/rbnz_macrofinance_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IAAE 2018</title>
+      <link>https://lucabrugnolini.github.io/talk/iaae2018/</link>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/iaae2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I Vienna Workshop on Economic Forecasting</title>
+      <link>https://lucabrugnolini.github.io/talk/first_vienna_forecasting/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/talk/first_vienna_forecasting/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homes on Academic</title>
+    <title>Homes on Luca Brugnolini</title>
     <link>https://lucabrugnolini.github.io/home/</link>
-    <description>Recent content in Homes on Academic</description>
+    <description>Recent content in Homes on Luca Brugnolini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
+    <copyright>&amp;copy; 2017 Luca Brugnolini</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://lucabrugnolini.github.io/home/index.xml" rel="self" type="application/rss+xml" />
@@ -22,31 +22,13 @@
     </item>
     
     <item>
-      <title>Academic</title>
-      <link>https://lucabrugnolini.github.io/home/hero/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
-      
-      <guid>https://lucabrugnolini.github.io/home/hero/</guid>
-      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release   Star</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>https://lucabrugnolini.github.io/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/about/</guid>
-      <description>Biography Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
-    </item>
-    
-    <item>
-      <title>Skills</title>
-      <link>https://lucabrugnolini.github.io/home/skills/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
-      
-      <guid>https://lucabrugnolini.github.io/home/skills/</guid>
-      <description></description>
+      <description>Hello! I am a senior research economist at the Central Bank of Malta&#39;s Research Department. I was previously working as an economist at the European Central Bank, and as a macroeconomic researcher at the Rokos&#39; hedge fund in London.
+My research interests include monetary policy, time-series econometrics, and forecasting. I am also involved in understanding the effects of monetary policy surprises on financial assets. In the last years, I have extensively worked on this topic using high-frequency data.</description>
     </item>
     
     <item>
@@ -59,16 +41,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristiq
     </item>
     
     <item>
-      <title>Selected Publications</title>
-      <link>https://lucabrugnolini.github.io/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <title>Academic</title>
+      <link>https://lucabrugnolini.github.io/home/hero/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
       
-      <guid>https://lucabrugnolini.github.io/home/publications_selected/</guid>
-      <description></description>
+      <guid>https://lucabrugnolini.github.io/home/hero/</guid>
+      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release   Star</description>
     </item>
     
     <item>
-      <title>Recent Publications</title>
+      <title>Article</title>
       <link>https://lucabrugnolini.github.io/home/publications/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
@@ -86,11 +68,47 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristiq
     </item>
     
     <item>
-      <title>Recent &amp; Upcoming Talks</title>
+      <title>Talks</title>
       <link>https://lucabrugnolini.github.io/home/talks/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://lucabrugnolini.github.io/home/teaching/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/home/teaching/</guid>
+      <description> 2018: DSGE Models, Central Bank of Malta, Lecturer Syllabus 2016 to 2018: Macroeconomics, University of Rome Tor Vergata, TA (Luisa Corrado). Notes 2013 to 2017: Computational Economics, University of Rome Tor Vergata, TA (Luisa Corrado). Code NK 2015: Introduction to DSGE models, University of Rome Tor Vergata, TA (Luisa Corrado). Slides Notes  </description>
+    </item>
+    
+    <item>
+      <title>Skills</title>
+      <link>https://lucabrugnolini.github.io/home/skills/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/home/skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://lucabrugnolini.github.io/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/home/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>https://lucabrugnolini.github.io/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/home/publications_selected/</guid>
       <description></description>
     </item>
     
@@ -113,30 +131,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristiq
     </item>
     
     <item>
-      <title>Custom Section</title>
-      <link>https://lucabrugnolini.github.io/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
-      
-      <guid>https://lucabrugnolini.github.io/home/teaching/</guid>
-      <description>This is an example of using the custom widget to create your own homepage section.
-To remove this section, either delete content/home/teaching.md or edit the frontmatter of the file to deactivate the widget by setting active = false.</description>
-    </item>
-    
-    <item>
       <title>Tags</title>
       <link>https://lucabrugnolini.github.io/home/tags/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/tags/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://lucabrugnolini.github.io/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
-      
-      <guid>https://lucabrugnolini.github.io/home/contact/</guid>
       <description></description>
     </item>
     
