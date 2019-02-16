@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Luca Brugnolini</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://lucabrugnolini.github.io/home/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>https://lucabrugnolini.github.io/home/hero_carousel/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/hero_carousel/</guid>
       <description></description>
@@ -27,8 +27,7 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/about/</guid>
-      <description>Hello! I am a senior research economist at the Central Bank of Malta&#39;s Research Department. I was previously working as an economist at the European Central Bank, and as a macroeconomic researcher at the Rokos&#39; hedge fund in London.
-My research interests include monetary policy, time-series econometrics, and forecasting. I am also involved in understanding the effects of monetary policy surprises on financial assets. In the last years, I have extensively worked on this topic using high-frequency data.</description>
+      <description>Hello! I am an econometrician at Rokos Capital Management. I was previously working as a senior economist at the Research Department of the Central Bank of Malta, and as an economist at the European Central Bank&#39;s Monetary Policy Strategy department. My research interests include monetary policy, time series--econometrics, and forecasting.</description>
     </item>
     
     <item>
@@ -43,7 +42,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Academic</title>
       <link>https://lucabrugnolini.github.io/home/hero/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/hero/</guid>
       <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release   Star</description>
@@ -52,7 +51,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Article</title>
       <link>https://lucabrugnolini.github.io/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/publications/</guid>
       <description></description>
@@ -61,7 +60,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Selected Talks</title>
       <link>https://lucabrugnolini.github.io/home/talks_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/talks_selected/</guid>
       <description></description>
@@ -70,7 +69,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Talks</title>
       <link>https://lucabrugnolini.github.io/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/talks/</guid>
       <description></description>
@@ -79,7 +78,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Teaching</title>
       <link>https://lucabrugnolini.github.io/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/teaching/</guid>
       <description> 2018: DSGE Models, Central Bank of Malta, Lecturer Syllabus 2016 to 2018: Macroeconomics, University of Rome Tor Vergata, TA (Luisa Corrado). Notes 2013 to 2017: Computational Economics, University of Rome Tor Vergata, TA (Luisa Corrado). Code NK 2015: Introduction to DSGE models, University of Rome Tor Vergata, TA (Luisa Corrado). Slides Notes  </description>
@@ -88,7 +87,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Skills</title>
       <link>https://lucabrugnolini.github.io/home/skills/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/skills/</guid>
       <description></description>
@@ -97,7 +96,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Contact</title>
       <link>https://lucabrugnolini.github.io/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/contact/</guid>
       <description></description>
@@ -106,7 +105,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Selected Publications</title>
       <link>https://lucabrugnolini.github.io/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/publications_selected/</guid>
       <description></description>
@@ -115,7 +114,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Recent Posts</title>
       <link>https://lucabrugnolini.github.io/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/posts/</guid>
       <description></description>
@@ -124,7 +123,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Projects</title>
       <link>https://lucabrugnolini.github.io/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/projects/</guid>
       <description></description>
@@ -133,7 +132,7 @@ My research interests include monetary policy, time-series econometrics, and for
     <item>
       <title>Tags</title>
       <link>https://lucabrugnolini.github.io/home/tags/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0100</pubDate>
       
       <guid>https://lucabrugnolini.github.io/home/tags/</guid>
       <description></description>
