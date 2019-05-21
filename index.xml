@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Luca Brugnolini on Luca Brugnolini</title>
@@ -7,8 +6,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Luca Brugnolini</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Measuring Euro Area Monetary Policy</title>
+      <link>https://lucabrugnolini.github.io/publication/article_1-_-monetary_shock/</link>
+      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucabrugnolini.github.io/publication/article_1-_-monetary_shock/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Central Bank of Malta Annual Research Workshop</title>
@@ -34,15 +42,6 @@
       <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lucabrugnolini.github.io/talk/cbsl_conference_2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Measuring Euro Area Monetary Policy</title>
-      <link>https://lucabrugnolini.github.io/publication/article_1-_-monetary_shock/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://lucabrugnolini.github.io/publication/article_1-_-monetary_shock/</guid>
       <description></description>
     </item>
     
