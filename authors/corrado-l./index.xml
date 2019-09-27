@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Corrado L. | Luca Brugnolini</title>
+    <link>https://lucabrugnolini.github.io/authors/corrado-l./</link>
+      <atom:link href="https://lucabrugnolini.github.io/authors/corrado-l./index.xml" rel="self" type="application/rss+xml" />
+    <description>Corrado L.</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lucabrugnolini.github.io/img/icon-192.png</url>
+      <title>Corrado L.</title>
+      <link>https://lucabrugnolini.github.io/authors/corrado-l./</link>
+    </image>
+    
+    <item>
+      <title>Fiscal Compact and Debt Consolidation Dynamics</title>
+      <link>https://lucabrugnolini.github.io/publication/article_4_fiscal_compact/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/publication/article_4_fiscal_compact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

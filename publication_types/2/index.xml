@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 | Luca Brugnolini</title>
+    <link>https://lucabrugnolini.github.io/publication_types/2/</link>
+      <atom:link href="https://lucabrugnolini.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <description>2</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Fri, 17 May 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lucabrugnolini.github.io/img/icon-192.png</url>
+      <title>2</title>
+      <link>https://lucabrugnolini.github.io/publication_types/2/</link>
+    </image>
+    
+    <item>
+      <title>Measuring Euro Area Monetary Policy</title>
+      <link>https://lucabrugnolini.github.io/publication/article_1-_-monetary_shock/</link>
+      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/publication/article_1-_-monetary_shock/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

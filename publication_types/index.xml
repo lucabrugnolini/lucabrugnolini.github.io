@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publication_types on Luca Brugnolini</title>
+    <title>Publication_types | Luca Brugnolini</title>
     <link>https://lucabrugnolini.github.io/publication_types/</link>
-    <description>Recent content in Publication_types on Luca Brugnolini</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Luca Brugnolini</copyright>
-    <lastBuildDate>Fri, 17 May 2019 00:00:00 +0000</lastBuildDate>
+      <atom:link href="https://lucabrugnolini.github.io/publication_types/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publication_types</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Fri, 17 May 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lucabrugnolini.github.io/img/icon-192.png</url>
+      <title>Publication_types</title>
+      <link>https://lucabrugnolini.github.io/publication_types/</link>
+    </image>
     
-	<atom:link href="https://lucabrugnolini.github.io/publication_types/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>2</title>
+      <link>https://lucabrugnolini.github.io/publication_types/2/</link>
+      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/publication_types/2/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>3</title>
       <link>https://lucabrugnolini.github.io/publication_types/3/</link>
-      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
       <guid>https://lucabrugnolini.github.io/publication_types/3/</guid>
       <description></description>
     </item>
