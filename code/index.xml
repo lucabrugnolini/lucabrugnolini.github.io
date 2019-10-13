@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codes | Luca Brugnolini</title>
+    <link>https://lucabrugnolini.github.io/code/</link>
+      <atom:link href="https://lucabrugnolini.github.io/code/index.xml" rel="self" type="application/rss+xml" />
+    <description>Codes</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Thu, 11 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lucabrugnolini.github.io/img/icon-192.png</url>
+      <title>Codes</title>
+      <link>https://lucabrugnolini.github.io/code/</link>
+    </image>
+    
+    <item>
+      <title>Julia Packages</title>
+      <link>https://lucabrugnolini.github.io/code/code/</link>
+      <pubDate>Thu, 11 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/code/code/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/lucabrugnolini/VectorAutoregressions.jl&#34; target=&#34;_blank&#34;&gt;VectorAutoregressions.jl:&lt;/a&gt;
+Vector Autoregressive (VAR) models in Julia.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/lucabrugnolini/NFP.jl&#34; target=&#34;_blank&#34;&gt;ForecastingCombinations.jl:&lt;/a&gt;
+forecasting using a combinatoric approach and exploiting parallel computing in Julia.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ForecastingCombinations.jl</title>
+      <link>https://lucabrugnolini.github.io/code/nfp/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/code/nfp/</guid>
+      <description>
+
+&lt;h4 id=&#34;forecasting-variables-using-a-combinatoric-approach-and-exploiting-parallel-computing-in-julia-forecastingcombinations-jl-https-github-com-lucabrugnolini-forecastingcombinations-jl&#34;&gt;Forecasting Variables using a combinatoric approach and exploiting parallel computing in Julia (&lt;a href=&#34;https://github.com/lucabrugnolini/ForecastingCombinations.jl&#34; target=&#34;_blank&#34;&gt;ForecastingCombinations.jl&lt;/a&gt;)&lt;/h4&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;Pkg.clone(&amp;quot;https://github.com/lucabrugnolini/ForecastingCombinations.jl&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+
+&lt;p&gt;The procedure is described in &lt;a href=&#34;https://lucabrugnolini.github.io/publication/forecasting_inflation.pdf&#34; target=&#34;_blank&#34;&gt;Brugnolini L. (2018)&lt;/a&gt;. The application in the paper is on predicting the probability of having inflation around the European Central Bank&amp;rsquo;s target.&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Given a (balanced) dataset of &lt;em&gt;K&lt;/em&gt; macroeconomic variables, the objective is to select the best model to predict future values of a target variable. The selection procedure consists in (i) select the best &lt;em&gt;iBest&lt;/em&gt; variables according to several out-of-sample criteria and then use these variables in models that use their combination. More specifically:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;the procedure selects the best &lt;code&gt;iBest&lt;/code&gt; variables using two different criteria (mean absolute error (MAE) and root mean squared error (RMSE) included in the model as a vector &lt;em&gt;fLoss&lt;/em&gt; of functions in the form &lt;em&gt;f(Prediction,TrueValue)&lt;/em&gt;). This selection step is univariate, i.e. the variables are chosen by running a simple out-of-sample  regression of the target variable on each variable of the dataset.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the &lt;code&gt;iBest&lt;/code&gt; variables are combined into set of &lt;em&gt;2, 3, &amp;hellip;, iBest&lt;/em&gt; variables. For each of these sets, the model is estimated and then avaluated out-of-sample. The best model is the one with the lowest out-of-sample &lt;code&gt;MSE&lt;/code&gt;. We also augment each model with the first principal component of all variable in the dataset. Thus, there are a total of &lt;em&gt;2 (2^iBest)&lt;/em&gt; models.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The complexity is &lt;em&gt;O((T-Ts)*2^iBest)&lt;/em&gt; where &lt;em&gt;T&lt;/em&gt; is the sample size, &lt;em&gt;Ts&lt;/em&gt; is the number of observation in the initial estimation window.&lt;/p&gt;
+
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+
+&lt;p&gt;Forecasting US non-farm-payroll one and two months ahead &lt;code&gt;H = [1,2]&lt;/code&gt; using a dataset containing 116 US variables taken from &lt;a href=&#34;https://amstat.tandfonline.com/doi/abs/10.1080/07350015.2015.1086655&#34; target=&#34;_blank&#34;&gt;McCracken and Ng (2015)&lt;/a&gt;. &lt;code&gt;iBest&lt;/code&gt; is set to 16. The code below is an example of parallelization on &lt;code&gt;N_CORE&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;addprocs(N_CORE)
+@everywhere using ForecastingCombinations
+@everywhere using CSV, DataFrames, GLM
+
+@everywhere mae(vX::Vector,vY::Vector) = mean(abs.(vX-vY))      ## MAE loss function 
+@everywhere rmse(vX::Vector,vY::Array) = sqrt(mean((vX-vY).^2)) ## RMSE loss function
+
+@everywhere const fLoss = [mae rmse] ## Vector of loss functions 
+
+@everywhere const sStart_s = &amp;quot;01/01/15&amp;quot;                   ## This is the beginning of the out-of-sample window
+@everywhere const iSymbol = :NFP                          ## Target variable
+@everywhere const vSymbol = [:Date, :NFP, :NFP_bb_median] ## Variables to be removed from the dataset (non-numerical and dep. var.)
+@everywhere const H = [1,2]                               ## Out-of-sample horizon
+@everywhere const iBest = 16                               ## iBest
+@everywhere const ncomb_load = iBest                      ## TODO: remove this option
+
+@everywhere const dfData = CSV.read(joinpath(Pkg.dir(&amp;quot;ForecastingCombinations&amp;quot;),&amp;quot;test&amp;quot;,&amp;quot;data.csv&amp;quot;), header = true)
+@everywhere const iStart = find(dfData[:Date] .== sStart_s)[1]
+
+## computes the two steps variable selection
+l_plot,r = sforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,fLoss)
+## `fforecast` uses results previously stored with `sforecast`
+l_plot,r = fforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,fLoss)
+
+# Plot the forecasts
+l_plot
+
+## Remove process added
+rmprocs(2:N_CORE)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- ![alt text](https://raw.githubusercontent.com/lucabrugnolini/ForecastingCombinations.jl/loss_function_implementation/test/nfp.png) --&gt;
+
+&lt;p&gt;In case one is interested in predicting probabilities, as the US probability of recession, simply include a link function in &lt;code&gt;sforecast&lt;/code&gt; or &lt;code&gt;fforecast&lt;/code&gt;, and use a binary variable as dependent variable.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;@everywhere const l = ProbitLink() # link function for probability model
+
+## computes the two steps variable selection
+l_plot,r = sforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,l,fLoss)
+## `fforecast` uses results previously stored with `sforecast`
+l_plot,r = fforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,l,fLoss)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- ![alt text](https://raw.githubusercontent.com/lucabrugnolini/ForecastingCombinations.jl/loss_function_implementation/test/recession.png) --&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;Brugnolini L. (2018) &amp;ldquo;Forecasting Deflation Probability in the EA: A Combinatoric Approach.&amp;rdquo; &lt;em&gt;Central Bank of Malta Working Paper&lt;/em&gt;, 01/2018.&lt;/p&gt;
+
+&lt;p&gt;McCracken, Michael W., and Serena Ng.(2016) &amp;ldquo;FRED-MD: A Monthly Database for Macroeconomic Research.&amp;rdquo; Journal of Business &amp;amp; Economic Statistics 34.4:574-589.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VAR.jl</title>
+      <link>https://lucabrugnolini.github.io/code/var/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/code/var/</guid>
+      <description>
+
+&lt;h4 id=&#34;vector-autoregressive-models-for-julia-var-jl-https-github-com-lucabrugnolini-var-jl&#34;&gt;Vector autoregressive models for Julia (&lt;a href=&#34;https://github.com/lucabrugnolini/VAR.jl&#34; target=&#34;_blank&#34;&gt;VAR.jl&lt;/a&gt;)&lt;/h4&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;Pkg.clone(&amp;quot;https://github.com/lucabrugnolini/VectorAutoregressions.jl&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This package is a work in progress for the estimation and identification of Vector Autoregressive (VAR) models.&lt;/p&gt;
+
+&lt;h2 id=&#34;status&#34;&gt;Status&lt;/h2&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; VAR
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; VAR(1) form&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Lag-length selection&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; AIC&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; AICC&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; BIC&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; HQC&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; VAR impulse response function (IRFs)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Identification
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Reduce form&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cholesky&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Long-run restrictions&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Sign restrictions&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Heteroskedasticity&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; External instruments (ex. high-frequency,narrative)&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Confidence bands
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Asymptotic&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Bootstrap&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Bootstrap-after-bootstrap&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Forecasting&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; BVAR&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; FAVAR&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Local projection IRFs
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Lag-length selection&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Confidence bands
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Standard&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Bootstrap&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Bayesian Local Projection&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf. bands.
+using VectorAutoregressions, Plots
+
+y = readdlm(joinpath(Pkg.dir(&amp;quot;VectorAutoregressions&amp;quot;),&amp;quot;test&amp;quot;,&amp;quot;cholvar_test_data.csv&amp;quot;), &#39;,&#39;) #read example file with data
+intercept = false #intercept in the estimation
+p = 2 #select lag-length
+H = 15 # IRFs horizon
+nrep = 500 #bootstrap sample
+
+# Fit VAR(2) to data
+V = VAR(y,p,intercept)
+
+# Estimate IRFs - Cholesky identification
+T,K = size(y) 
+mIRFa = IRFs_a(V,H,intercept) #asymptotic conf. bandf
+mIRFb = IRFs_b(V,H,nrep,intercept) #bootstrap conf. bands
+
+# Plot irf + asy ci
+pIRF_asy = plot(layout = grid(K,K));
+[plot!(pIRF_asy, [mIRFa.CI.CIl[i,:] mIRFa.IRF[i,:] mIRFa.CI.CIh[i,:]], color = [&amp;quot;red&amp;quot; &amp;quot;red&amp;quot; &amp;quot;red&amp;quot;],
+line = [:dash :solid :dash], legend = false, subplot = i) for i in 1:K^2]
+gui(pIRF_asy)
+
+# Plot irf + bootstraped ci
+pIRF_boot = plot(layout = grid(K,K));
+[plot!(pIRF_boot, [mIRFb.CI.CIl[i,:] mIRFb.IRF[i,:] mIRFb.CI.CIh[i,:]], color = [&amp;quot;blue&amp;quot; &amp;quot;blue&amp;quot; &amp;quot;blue&amp;quot;],
+line = [:dash :solid :dash], legend = false, subplot = i) for i in 1:K^2]
+gui(pIRF_boot)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;More in details, &lt;code&gt;y&lt;/code&gt; is a matrix with data, &lt;code&gt;p&lt;/code&gt; is the lag-length of the VAR we fit to the data and &lt;code&gt;i&lt;/code&gt; is a Boolean for including an intercept (default is true). &lt;code&gt;VAR(y,p,intercept)&lt;/code&gt; returns a fitted VAR(&lt;code&gt;p&lt;/code&gt;) model in &lt;code&gt;V&lt;/code&gt; with the following structure:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;type VAR
+  Y::Array # dep. variables
+  X::Array # covariates
+  β::Array # parameters
+  ϵ::Array # residuals
+  Σ::Array # VCV matrix
+  p::Int64 # lag-length
+  i::Bool # true or false for including an intercept (default is true)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can access to each element writing &lt;code&gt;V.&lt;/code&gt; and than the element you are interested in (for example for the covariates &lt;code&gt;V.X&lt;/code&gt;).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
