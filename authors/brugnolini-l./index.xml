@@ -5,12 +5,28 @@
     <link>https://lucabrugnolini.github.io/authors/brugnolini-l./</link>
       <atom:link href="https://lucabrugnolini.github.io/authors/brugnolini-l./index.xml" rel="self" type="application/rss+xml" />
     <description>Brugnolini L.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Fri, 17 May 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://lucabrugnolini.github.io/img/icon-192.png</url>
       <title>Brugnolini L.</title>
       <link>https://lucabrugnolini.github.io/authors/brugnolini-l./</link>
     </image>
+    
+    <item>
+      <title>Is Anything Predictable in Market-Based Surprises?</title>
+      <link>https://lucabrugnolini.github.io/publication/article_5_macro_surprise/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/publication/article_5_macro_surprise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> MEDSEA-FIN: A DSGE model of the Maltese economy with housing and financial frictions,</title>
+      <link>https://lucabrugnolini.github.io/publication/article_7_medsea_fin/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/publication/article_7_medsea_fin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Measuring Euro Area Monetary Policy</title>
@@ -45,26 +61,10 @@
     </item>
     
     <item>
-      <title>Is Anything Predictable in Macroeconomic Surprises?</title>
-      <link>https://lucabrugnolini.github.io/publication/article_5_macro_surprise/</link>
-      <pubDate>Wed, 03 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://lucabrugnolini.github.io/publication/article_5_macro_surprise/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bayesian Cubic Local Projection</title>
+      <title>Flexible Bayesian Local Projection</title>
       <link>https://lucabrugnolini.github.io/publication/article_6_bayesian_cubic_local_projection/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
       <guid>https://lucabrugnolini.github.io/publication/article_6_bayesian_cubic_local_projection/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title> MEDSEA-FIN: A DSGE model for Malta with Financial Frictions,</title>
-      <link>https://lucabrugnolini.github.io/publication/article_7_medsea_fin/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://lucabrugnolini.github.io/publication/article_7_medsea_fin/</guid>
       <description></description>
     </item>
     
