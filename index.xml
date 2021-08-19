@@ -5,12 +5,20 @@
     <link>https://lucabrugnolini.github.io/</link>
       <atom:link href="https://lucabrugnolini.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Luca Brugnolini</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Mon, 09 Aug 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://lucabrugnolini.github.io/img/icon-192.png</url>
       <title>Luca Brugnolini</title>
       <link>https://lucabrugnolini.github.io/</link>
     </image>
+    
+    <item>
+      <title>Euro Area Deflationary Pressure Index</title>
+      <link>https://lucabrugnolini.github.io/publication/article_9_ea_dpi/</link>
+      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/publication/article_9_ea_dpi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Is Anything Predictable in Market-Based Surprises?</title>
@@ -31,7 +39,7 @@
     <item>
       <title>IAAE 2019</title>
       <link>https://lucabrugnolini.github.io/talk/iaae2019/</link>
-      <pubDate>Wed, 26 Jun 2019 09:00:00 +0100</pubDate>
+      <pubDate>Wed, 26 Jun 2019 09:00:00 +0200</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/iaae2019/</guid>
       <description></description>
     </item>
@@ -47,7 +55,7 @@
     <item>
       <title>RBNZ Conference on Macro-Finance</title>
       <link>https://lucabrugnolini.github.io/talk/rbnz_macrofinance_2018/</link>
-      <pubDate>Thu, 13 Dec 2018 09:00:00 +0000</pubDate>
+      <pubDate>Thu, 13 Dec 2018 09:00:00 +0100</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/rbnz_macrofinance_2018/</guid>
       <description></description>
     </item>
@@ -55,7 +63,7 @@
     <item>
       <title>Central Bank of Sri Lanka</title>
       <link>https://lucabrugnolini.github.io/talk/cbsl_conference_2018/</link>
-      <pubDate>Fri, 07 Dec 2018 09:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Dec 2018 09:00:00 +0100</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/cbsl_conference_2018/</guid>
       <description></description>
     </item>
@@ -63,7 +71,7 @@
     <item>
       <title>Central Bank of Malta Annual Research Workshop</title>
       <link>https://lucabrugnolini.github.io/talk/cbm_workshop_2018/</link>
-      <pubDate>Mon, 19 Nov 2018 09:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Nov 2018 09:00:00 +0100</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/cbm_workshop_2018/</guid>
       <description></description>
     </item>
@@ -71,7 +79,7 @@
     <item>
       <title>Bilkent University</title>
       <link>https://lucabrugnolini.github.io/talk/bilkent_2018/</link>
-      <pubDate>Fri, 09 Nov 2018 09:00:00 +0000</pubDate>
+      <pubDate>Fri, 09 Nov 2018 09:00:00 +0100</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/bilkent_2018/</guid>
       <description></description>
     </item>
@@ -87,7 +95,7 @@
     <item>
       <title>IAAE 2018</title>
       <link>https://lucabrugnolini.github.io/talk/iaae2018/</link>
-      <pubDate>Tue, 26 Jun 2018 09:00:00 +0100</pubDate>
+      <pubDate>Tue, 26 Jun 2018 09:00:00 +0200</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/iaae2018/</guid>
       <description></description>
     </item>
@@ -95,7 +103,7 @@
     <item>
       <title>CEF 2018</title>
       <link>https://lucabrugnolini.github.io/talk/cef2018/</link>
-      <pubDate>Tue, 19 Jun 2018 09:00:00 +0100</pubDate>
+      <pubDate>Tue, 19 Jun 2018 09:00:00 +0200</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/cef2018/</guid>
       <description></description>
     </item>
@@ -111,7 +119,7 @@
     <item>
       <title>Governor&#39;s Workshop</title>
       <link>https://lucabrugnolini.github.io/talk/gw/</link>
-      <pubDate>Thu, 31 May 2018 12:30:00 +0100</pubDate>
+      <pubDate>Thu, 31 May 2018 12:30:00 +0200</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/gw/</guid>
       <description></description>
     </item>
@@ -119,7 +127,7 @@
     <item>
       <title>CBM Research Seminar</title>
       <link>https://lucabrugnolini.github.io/talk/cbm_seminar/</link>
-      <pubDate>Fri, 27 Apr 2018 14:00:00 +0100</pubDate>
+      <pubDate>Fri, 27 Apr 2018 14:00:00 +0200</pubDate>
       <guid>https://lucabrugnolini.github.io/talk/cbm_seminar/</guid>
       <description></description>
     </item>

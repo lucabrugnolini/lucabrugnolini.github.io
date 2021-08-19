@@ -5,12 +5,20 @@
     <link>https://lucabrugnolini.github.io/publication/</link>
       <atom:link href="https://lucabrugnolini.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright><lastBuildDate>Mon, 09 Aug 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://lucabrugnolini.github.io/img/icon-192.png</url>
       <title>Publications</title>
       <link>https://lucabrugnolini.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>Euro Area Deflationary Pressure Index</title>
+      <link>https://lucabrugnolini.github.io/publication/article_9_ea_dpi/</link>
+      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/publication/article_9_ea_dpi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Is Anything Predictable in Market-Based Surprises?</title>
