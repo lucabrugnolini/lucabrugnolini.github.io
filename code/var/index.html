@@ -28,8 +28,8 @@
   
     
   
-  <meta name="description" content="Vector autoregressive models for Julia (VAR.jl) Installation Pkg.clone(&quot;https://github.com/lucabrugnolini/VectorAutoregressions.jl&quot;)  Introduction This package is a work in progress for the estimation and identification of Vector Autoregressive (VAR) models.
-Status VAR VAR(1) form Lag-length selection AIC AICC BIC HQC VAR impulse response function (IRFs) Identification Reduce form Cholesky Long-run restrictions Sign restrictions Heteroskedasticity External instruments (ex. high-frequency,narrative)  Confidence bands Asymptotic Bootstrap Bootstrap-after-bootstrap  Forecasting BVAR FAVAR  Local projection IRFs Lag-length selection Confidence bands Standard Bootstrap  Bayesian Local Projection   Example ## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf.">
+  <meta name="description" content="Vector autoregressive models for Julia (VAR.jl) Installation Pkg.clone(&#34;https://github.com/lucabrugnolini/VectorAutoregressions.jl&#34;) Introduction This package is a work in progress for the estimation and identification of Vector Autoregressive (VAR) models.
+Status VAR VAR(1) form Lag-length selection AIC AICC BIC HQC VAR impulse response function (IRFs) Identification Reduce form Cholesky Long-run restrictions Sign restrictions Heteroskedasticity External instruments (ex. high-frequency,narrative) Confidence bands Asymptotic Bootstrap Bootstrap-after-bootstrap Forecasting BVAR FAVAR Local projection IRFs Lag-length selection Confidence bands Standard Bootstrap Bayesian Local Projection Example ## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://lucabrugnolini.github.io/code/var/">
@@ -82,13 +82,17 @@ Status VAR VAR(1) form Lag-length selection AIC AICC BIC HQC VAR impulse respons
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.04a87a1cb9027e3c50f566322527c56f.css">
+  <link rel="stylesheet" href="/css/academic.min.f8d196228b14ed349e2c1b466a4ac398.css">
 
   
 
   
+
+
+
+
   
-  
+
 
   
 
@@ -111,8 +115,8 @@ Status VAR VAR(1) form Lag-length selection AIC AICC BIC HQC VAR impulse respons
   <meta property="og:site_name" content="Luca Brugnolini">
   <meta property="og:url" content="https://lucabrugnolini.github.io/code/var/">
   <meta property="og:title" content="VAR.jl | Luca Brugnolini">
-  <meta property="og:description" content="Vector autoregressive models for Julia (VAR.jl) Installation Pkg.clone(&quot;https://github.com/lucabrugnolini/VectorAutoregressions.jl&quot;)  Introduction This package is a work in progress for the estimation and identification of Vector Autoregressive (VAR) models.
-Status VAR VAR(1) form Lag-length selection AIC AICC BIC HQC VAR impulse response function (IRFs) Identification Reduce form Cholesky Long-run restrictions Sign restrictions Heteroskedasticity External instruments (ex. high-frequency,narrative)  Confidence bands Asymptotic Bootstrap Bootstrap-after-bootstrap  Forecasting BVAR FAVAR  Local projection IRFs Lag-length selection Confidence bands Standard Bootstrap  Bayesian Local Projection   Example ## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf."><meta property="og:image" content="https://lucabrugnolini.github.io/img/icon-192.png">
+  <meta property="og:description" content="Vector autoregressive models for Julia (VAR.jl) Installation Pkg.clone(&#34;https://github.com/lucabrugnolini/VectorAutoregressions.jl&#34;) Introduction This package is a work in progress for the estimation and identification of Vector Autoregressive (VAR) models.
+Status VAR VAR(1) form Lag-length selection AIC AICC BIC HQC VAR impulse response function (IRFs) Identification Reduce form Cholesky Long-run restrictions Sign restrictions Heteroskedasticity External instruments (ex. high-frequency,narrative) Confidence bands Asymptotic Bootstrap Bootstrap-after-bootstrap Forecasting BVAR FAVAR Local projection IRFs Lag-length selection Confidence bands Standard Bootstrap Bayesian Local Projection Example ## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf."><meta property="og:image" content="https://lucabrugnolini.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://lucabrugnolini.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
@@ -525,113 +529,106 @@ Status VAR VAR(1) form Lag-length selection AIC AICC BIC HQC VAR impulse respons
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<h4 id="vector-autoregressive-models-for-julia-var-jl-https-github-com-lucabrugnolini-var-jl">Vector autoregressive models for Julia (<a href="https://github.com/lucabrugnolini/VAR.jl" target="_blank">VAR.jl</a>)</h4>
-
+      <h4 id="vector-autoregressive-models-for-julia-varjlhttpsgithubcomlucabrugnolinivarjl">Vector autoregressive models for Julia (<a href="https://github.com/lucabrugnolini/VAR.jl">VAR.jl</a>)</h4>
 <h2 id="installation">Installation</h2>
-
-<pre><code class="language-julia">Pkg.clone(&quot;https://github.com/lucabrugnolini/VectorAutoregressions.jl&quot;)
-</code></pre>
-
-<h2 id="introduction">Introduction</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>Pkg<span style="color:#f92672">.</span>clone(<span style="color:#e6db74">&#34;https://github.com/lucabrugnolini/VectorAutoregressions.jl&#34;</span>)
+</span></span></code></pre></div><h2 id="introduction">Introduction</h2>
 <p>This package is a work in progress for the estimation and identification of Vector Autoregressive (VAR) models.</p>
-
 <h2 id="status">Status</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> VAR
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> VAR(1) form</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Lag-length selection</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> AIC</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> AICC</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> BIC</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> HQC</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> VAR impulse response function (IRFs)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Identification
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Reduce form</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Cholesky</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Long-run restrictions</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Sign restrictions</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Heteroskedasticity</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> External instruments (ex. high-frequency,narrative)</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Confidence bands
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Asymptotic</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Bootstrap</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Bootstrap-after-bootstrap</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Forecasting</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> BVAR</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> FAVAR</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Local projection IRFs
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Lag-length selection</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Confidence bands
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Standard</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Bootstrap</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Bayesian Local Projection</label></li>
-</ul></label></li>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> VAR
+<ul>
+<li><input checked="" disabled="" type="checkbox"> VAR(1) form</li>
+<li><input checked="" disabled="" type="checkbox"> Lag-length selection
+<ul>
+<li><input checked="" disabled="" type="checkbox"> AIC</li>
+<li><input checked="" disabled="" type="checkbox"> AICC</li>
+<li><input checked="" disabled="" type="checkbox"> BIC</li>
+<li><input checked="" disabled="" type="checkbox"> HQC</li>
 </ul>
-
+</li>
+<li><input checked="" disabled="" type="checkbox"> VAR impulse response function (IRFs)
+<ul>
+<li><input disabled="" type="checkbox"> Identification
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Reduce form</li>
+<li><input checked="" disabled="" type="checkbox"> Cholesky</li>
+<li><input disabled="" type="checkbox"> Long-run restrictions</li>
+<li><input disabled="" type="checkbox"> Sign restrictions</li>
+<li><input disabled="" type="checkbox"> Heteroskedasticity</li>
+<li><input disabled="" type="checkbox"> External instruments (ex. high-frequency,narrative)</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> Confidence bands
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Asymptotic</li>
+<li><input checked="" disabled="" type="checkbox"> Bootstrap</li>
+<li><input checked="" disabled="" type="checkbox"> Bootstrap-after-bootstrap</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Forecasting
+<ul>
+<li><input disabled="" type="checkbox"> BVAR</li>
+<li><input disabled="" type="checkbox"> FAVAR</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Local projection IRFs
+<ul>
+<li><input disabled="" type="checkbox"> Lag-length selection</li>
+<li><input disabled="" type="checkbox"> Confidence bands
+<ul>
+<li><input disabled="" type="checkbox"> Standard</li>
+<li><input disabled="" type="checkbox"> Bootstrap</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Bayesian Local Projection</li>
+</ul>
+</li>
+</ul>
 <h2 id="example">Example</h2>
-
-<pre><code class="language-julia">## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf. bands.
-using VectorAutoregressions, Plots
-
-y = readdlm(joinpath(Pkg.dir(&quot;VectorAutoregressions&quot;),&quot;test&quot;,&quot;cholvar_test_data.csv&quot;), ',') #read example file with data
-intercept = false #intercept in the estimation
-p = 2 #select lag-length
-H = 15 # IRFs horizon
-nrep = 500 #bootstrap sample
-
-# Fit VAR(2) to data
-V = VAR(y,p,intercept)
-
-# Estimate IRFs - Cholesky identification
-T,K = size(y) 
-mIRFa = IRFs_a(V,H,intercept) #asymptotic conf. bandf
-mIRFb = IRFs_b(V,H,nrep,intercept) #bootstrap conf. bands
-
-# Plot irf + asy ci
-pIRF_asy = plot(layout = grid(K,K));
-[plot!(pIRF_asy, [mIRFa.CI.CIl[i,:] mIRFa.IRF[i,:] mIRFa.CI.CIh[i,:]], color = [&quot;red&quot; &quot;red&quot; &quot;red&quot;],
-line = [:dash :solid :dash], legend = false, subplot = i) for i in 1:K^2]
-gui(pIRF_asy)
-
-# Plot irf + bootstraped ci
-pIRF_boot = plot(layout = grid(K,K));
-[plot!(pIRF_boot, [mIRFb.CI.CIl[i,:] mIRFb.IRF[i,:] mIRFb.CI.CIh[i,:]], color = [&quot;blue&quot; &quot;blue&quot; &quot;blue&quot;],
-line = [:dash :solid :dash], legend = false, subplot = i) for i in 1:K^2]
-gui(pIRF_boot)
-</code></pre>
-
-<p>More in details, <code>y</code> is a matrix with data, <code>p</code> is the lag-length of the VAR we fit to the data and <code>i</code> is a Boolean for including an intercept (default is true). <code>VAR(y,p,intercept)</code> returns a fitted VAR(<code>p</code>) model in <code>V</code> with the following structure:</p>
-
-<pre><code class="language-julia">type VAR
-  Y::Array # dep. variables
-  X::Array # covariates
-  β::Array # parameters
-  ϵ::Array # residuals
-  Σ::Array # VCV matrix
-  p::Int64 # lag-length
-  i::Bool # true or false for including an intercept (default is true)
-end
-</code></pre>
-
-<p>You can access to each element writing <code>V.</code> and than the element you are interested in (for example for the covariates <code>V.X</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#75715e">## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf. bands.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> VectorAutoregressions, Plots
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> readdlm(joinpath(Pkg<span style="color:#f92672">.</span>dir(<span style="color:#e6db74">&#34;VectorAutoregressions&#34;</span>),<span style="color:#e6db74">&#34;test&#34;</span>,<span style="color:#e6db74">&#34;cholvar_test_data.csv&#34;</span>), <span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#75715e">#read example file with data</span>
+</span></span><span style="display:flex;"><span>intercept <span style="color:#f92672">=</span> false <span style="color:#75715e">#intercept in the estimation</span>
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">#select lag-length</span>
+</span></span><span style="display:flex;"><span>H <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span> <span style="color:#75715e"># IRFs horizon</span>
+</span></span><span style="display:flex;"><span>nrep <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span> <span style="color:#75715e">#bootstrap sample</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fit VAR(2) to data</span>
+</span></span><span style="display:flex;"><span>V <span style="color:#f92672">=</span> VAR(y,p,intercept)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Estimate IRFs - Cholesky identification</span>
+</span></span><span style="display:flex;"><span>T,K <span style="color:#f92672">=</span> size(y) 
+</span></span><span style="display:flex;"><span>mIRFa <span style="color:#f92672">=</span> IRFs_a(V,H,intercept) <span style="color:#75715e">#asymptotic conf. bandf</span>
+</span></span><span style="display:flex;"><span>mIRFb <span style="color:#f92672">=</span> IRFs_b(V,H,nrep,intercept) <span style="color:#75715e">#bootstrap conf. bands</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Plot irf + asy ci</span>
+</span></span><span style="display:flex;"><span>pIRF_asy <span style="color:#f92672">=</span> plot(layout <span style="color:#f92672">=</span> grid(K,K));
+</span></span><span style="display:flex;"><span>[plot!(pIRF_asy, [mIRFa<span style="color:#f92672">.</span>CI<span style="color:#f92672">.</span>CIl[i,<span style="color:#f92672">:</span>] mIRFa<span style="color:#f92672">.</span>IRF[i,<span style="color:#f92672">:</span>] mIRFa<span style="color:#f92672">.</span>CI<span style="color:#f92672">.</span>CIh[i,<span style="color:#f92672">:</span>]], color <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#e6db74">&#34;red&#34;</span>],
+</span></span><span style="display:flex;"><span>line <span style="color:#f92672">=</span> [<span style="color:#e6db74">:dash</span> <span style="color:#e6db74">:solid</span> <span style="color:#e6db74">:dash</span>], legend <span style="color:#f92672">=</span> false, subplot <span style="color:#f92672">=</span> i) <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>K<span style="color:#f92672">^</span><span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>gui(pIRF_asy)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Plot irf + bootstraped ci</span>
+</span></span><span style="display:flex;"><span>pIRF_boot <span style="color:#f92672">=</span> plot(layout <span style="color:#f92672">=</span> grid(K,K));
+</span></span><span style="display:flex;"><span>[plot!(pIRF_boot, [mIRFb<span style="color:#f92672">.</span>CI<span style="color:#f92672">.</span>CIl[i,<span style="color:#f92672">:</span>] mIRFb<span style="color:#f92672">.</span>IRF[i,<span style="color:#f92672">:</span>] mIRFb<span style="color:#f92672">.</span>CI<span style="color:#f92672">.</span>CIh[i,<span style="color:#f92672">:</span>]], color <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;blue&#34;</span> <span style="color:#e6db74">&#34;blue&#34;</span> <span style="color:#e6db74">&#34;blue&#34;</span>],
+</span></span><span style="display:flex;"><span>line <span style="color:#f92672">=</span> [<span style="color:#e6db74">:dash</span> <span style="color:#e6db74">:solid</span> <span style="color:#e6db74">:dash</span>], legend <span style="color:#f92672">=</span> false, subplot <span style="color:#f92672">=</span> i) <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>K<span style="color:#f92672">^</span><span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>gui(pIRF_boot)
+</span></span></code></pre></div><p>More in details, <code>y</code> is a matrix with data, <code>p</code> is the lag-length of the VAR we fit to the data and <code>i</code> is a Boolean for including an intercept (default is true). <code>VAR(y,p,intercept)</code> returns a fitted VAR(<code>p</code>) model in <code>V</code> with the following structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>type VAR
+</span></span><span style="display:flex;"><span>  Y<span style="color:#f92672">::</span><span style="color:#66d9ef">Array</span> <span style="color:#75715e"># dep. variables</span>
+</span></span><span style="display:flex;"><span>  X<span style="color:#f92672">::</span><span style="color:#66d9ef">Array</span> <span style="color:#75715e"># covariates</span>
+</span></span><span style="display:flex;"><span>  β<span style="color:#f92672">::</span><span style="color:#66d9ef">Array</span> <span style="color:#75715e"># parameters</span>
+</span></span><span style="display:flex;"><span>  ϵ<span style="color:#f92672">::</span><span style="color:#66d9ef">Array</span> <span style="color:#75715e"># residuals</span>
+</span></span><span style="display:flex;"><span>  Σ<span style="color:#f92672">::</span><span style="color:#66d9ef">Array</span> <span style="color:#75715e"># VCV matrix</span>
+</span></span><span style="display:flex;"><span>  p<span style="color:#f92672">::</span><span style="color:#66d9ef">Int64</span> <span style="color:#75715e"># lag-length</span>
+</span></span><span style="display:flex;"><span>  i<span style="color:#f92672">::</span><span style="color:#66d9ef">Bool</span> <span style="color:#75715e"># true or false for including an intercept (default is true)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>You can access to each element writing <code>V.</code> and than the element you are interested in (for example for the covariates <code>V.X</code>).</p>
 
     </div>
 
@@ -674,59 +671,60 @@ end
     <div class="media-body">
       <h5 class="card-title"><a href="https://lucabrugnolini.github.io/">Luca Brugnolini</a></h5>
       <h6 class="card-subtitle">Econometrician</h6>
-      <p class="card-text">I am an econometrician at Rokos Capital Management. My research interests include monetary policy, time series&ndash;econometrics, and forecasting.</p>
+      <p class="card-text">I am an econometrician at Garda Capital Partners. My research interests include monetary policy, time series&ndash;econometrics, and forecasting.</p>
       <ul class="network-icon" aria-hidden="true">
-        
-          
-          
-          
-            
-          
-          
-          
-          
-          
-          <li>
-            <a href="mailto:luca.brugnolini@gmail.com" >
-              <i class="fas fa-envelope"></i>
-            </a>
-          </li>
-        
-          
-          
-          
-            
-          
-          
-          
-          
-          
-            
-          
-          <li>
-            <a href="https://github.com/lucabrugnolini" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-        
-          
-          
-          
-            
-          
-          
-          
-          
-          
-            
-          
-          <li>
-            <a href="https://www.linkedin.com/in/luca-brugnolini/" target="_blank" rel="noopener">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </li>
-        
-      </ul>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:luca.brugnolini@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/lucabrugnolini" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/luca-brugnolini/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
     </div>
   </div>
 
@@ -846,7 +844,7 @@ end
     
     
     
-    <script src="/js/academic.min.f92d7215d2132cd354f657f0bc9cc542.js"></script>
+    <script src="/js/academic.min.3ff51c6f53d48a2c473eb8372050e940.js"></script>
 
     
 
@@ -861,7 +859,7 @@ end
   
 
   <p class="powered-by">
-    &copy; 2017 Luca Brugnolini &middot; 
+    © 2017 Luca Brugnolini &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -869,7 +867,7 @@ end
 
     
     <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
+      <a href="#" class="back-to-top">
         <span class="button_icon">
           <i class="fas fa-chevron-up fa-2x"></i>
         </span>

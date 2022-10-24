@@ -18,11 +18,14 @@
       <pubDate>Thu, 11 Jan 2018 00:00:00 +0000</pubDate>
       <guid>https://lucabrugnolini.github.io/code/code/</guid>
       <description>&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/lucabrugnolini/VectorAutoregressions.jl&#34; target=&#34;_blank&#34;&gt;VectorAutoregressions.jl:&lt;/a&gt;
-Vector Autoregressive (VAR) models in Julia.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/lucabrugnolini/NFP.jl&#34; target=&#34;_blank&#34;&gt;ForecastingCombinations.jl:&lt;/a&gt;
-forecasting using a combinatoric approach and exploiting parallel computing in Julia.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lucabrugnolini/VectorAutoregressions.jl&#34;&gt;VectorAutoregressions.jl:&lt;/a&gt;
+Vector Autoregressive (VAR) models in Julia.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lucabrugnolini/NFP.jl&#34;&gt;ForecastingCombinations.jl:&lt;/a&gt;
+forecasting using a combinatoric approach and exploiting parallel computing in Julia.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
@@ -32,85 +35,64 @@ forecasting using a combinatoric approach and exploiting parallel computing in J
       <link>https://lucabrugnolini.github.io/code/nfp/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
       <guid>https://lucabrugnolini.github.io/code/nfp/</guid>
-      <description>
-
-&lt;h4 id=&#34;forecasting-variables-using-a-combinatoric-approach-and-exploiting-parallel-computing-in-julia-forecastingcombinations-jl-https-github-com-lucabrugnolini-forecastingcombinations-jl&#34;&gt;Forecasting Variables using a combinatoric approach and exploiting parallel computing in Julia (&lt;a href=&#34;https://github.com/lucabrugnolini/ForecastingCombinations.jl&#34; target=&#34;_blank&#34;&gt;ForecastingCombinations.jl&lt;/a&gt;)&lt;/h4&gt;
-
+      <description>&lt;h4 id=&#34;forecasting-variables-using-a-combinatoric-approach-and-exploiting-parallel-computing-in-julia-forecastingcombinationsjlhttpsgithubcomlucabrugnoliniforecastingcombinationsjl&#34;&gt;Forecasting Variables using a combinatoric approach and exploiting parallel computing in Julia (&lt;a href=&#34;https://github.com/lucabrugnolini/ForecastingCombinations.jl&#34;&gt;ForecastingCombinations.jl&lt;/a&gt;)&lt;/h4&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;Pkg.clone(&amp;quot;https://github.com/lucabrugnolini/ForecastingCombinations.jl&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
-
-&lt;p&gt;The procedure is described in &lt;a href=&#34;https://lucabrugnolini.github.io/publication/forecasting_inflation.pdf&#34; target=&#34;_blank&#34;&gt;Brugnolini L. (2018)&lt;/a&gt;. The application in the paper is on predicting the probability of having inflation around the European Central Bank&amp;rsquo;s target.&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Pkg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;clone(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://github.com/lucabrugnolini/ForecastingCombinations.jl&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;The procedure is described in &lt;a href=&#34;https://lucabrugnolini.github.io/publication/forecasting_inflation.pdf&#34;&gt;Brugnolini L. (2018)&lt;/a&gt;. The application in the paper is on predicting the probability of having inflation around the European Central Bank&amp;rsquo;s target.&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
 &lt;p&gt;Given a (balanced) dataset of &lt;em&gt;K&lt;/em&gt; macroeconomic variables, the objective is to select the best model to predict future values of a target variable. The selection procedure consists in (i) select the best &lt;em&gt;iBest&lt;/em&gt; variables according to several out-of-sample criteria and then use these variables in models that use their combination. More specifically:&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;the procedure selects the best &lt;code&gt;iBest&lt;/code&gt; variables using two different criteria (mean absolute error (MAE) and root mean squared error (RMSE) included in the model as a vector &lt;em&gt;fLoss&lt;/em&gt; of functions in the form &lt;em&gt;f(Prediction,TrueValue)&lt;/em&gt;). This selection step is univariate, i.e. the variables are chosen by running a simple out-of-sample  regression of the target variable on each variable of the dataset.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;the &lt;code&gt;iBest&lt;/code&gt; variables are combined into set of &lt;em&gt;2, 3, &amp;hellip;, iBest&lt;/em&gt; variables. For each of these sets, the model is estimated and then avaluated out-of-sample. The best model is the one with the lowest out-of-sample &lt;code&gt;MSE&lt;/code&gt;. We also augment each model with the first principal component of all variable in the dataset. Thus, there are a total of &lt;em&gt;2 (2^iBest)&lt;/em&gt; models.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the procedure selects the best &lt;code&gt;iBest&lt;/code&gt; variables using two different criteria (mean absolute error (MAE) and root mean squared error (RMSE) included in the model as a vector &lt;em&gt;fLoss&lt;/em&gt; of functions in the form &lt;em&gt;f(Prediction,TrueValue)&lt;/em&gt;). This selection step is univariate, i.e. the variables are chosen by running a simple out-of-sample  regression of the target variable on each variable of the dataset.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the &lt;code&gt;iBest&lt;/code&gt; variables are combined into set of &lt;em&gt;2, 3, &amp;hellip;, iBest&lt;/em&gt; variables. For each of these sets, the model is estimated and then avaluated out-of-sample. The best model is the one with the lowest out-of-sample &lt;code&gt;MSE&lt;/code&gt;. We also augment each model with the first principal component of all variable in the dataset. Thus, there are a total of &lt;em&gt;2 (2^iBest)&lt;/em&gt; models.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;The complexity is &lt;em&gt;O((T-Ts)*2^iBest)&lt;/em&gt; where &lt;em&gt;T&lt;/em&gt; is the sample size, &lt;em&gt;Ts&lt;/em&gt; is the number of observation in the initial estimation window.&lt;/p&gt;
-
 &lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-
-&lt;p&gt;Forecasting US non-farm-payroll one and two months ahead &lt;code&gt;H = [1,2]&lt;/code&gt; using a dataset containing 116 US variables taken from &lt;a href=&#34;https://amstat.tandfonline.com/doi/abs/10.1080/07350015.2015.1086655&#34; target=&#34;_blank&#34;&gt;McCracken and Ng (2015)&lt;/a&gt;. &lt;code&gt;iBest&lt;/code&gt; is set to 16. The code below is an example of parallelization on &lt;code&gt;N_CORE&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;addprocs(N_CORE)
-@everywhere using ForecastingCombinations
-@everywhere using CSV, DataFrames, GLM
-
-@everywhere mae(vX::Vector,vY::Vector) = mean(abs.(vX-vY))      ## MAE loss function 
-@everywhere rmse(vX::Vector,vY::Array) = sqrt(mean((vX-vY).^2)) ## RMSE loss function
-
-@everywhere const fLoss = [mae rmse] ## Vector of loss functions 
-
-@everywhere const sStart_s = &amp;quot;01/01/15&amp;quot;                   ## This is the beginning of the out-of-sample window
-@everywhere const iSymbol = :NFP                          ## Target variable
-@everywhere const vSymbol = [:Date, :NFP, :NFP_bb_median] ## Variables to be removed from the dataset (non-numerical and dep. var.)
-@everywhere const H = [1,2]                               ## Out-of-sample horizon
-@everywhere const iBest = 16                               ## iBest
-@everywhere const ncomb_load = iBest                      ## TODO: remove this option
-
-@everywhere const dfData = CSV.read(joinpath(Pkg.dir(&amp;quot;ForecastingCombinations&amp;quot;),&amp;quot;test&amp;quot;,&amp;quot;data.csv&amp;quot;), header = true)
-@everywhere const iStart = find(dfData[:Date] .== sStart_s)[1]
-
-## computes the two steps variable selection
-l_plot,r = sforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,fLoss)
-## `fforecast` uses results previously stored with `sforecast`
-l_plot,r = fforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,fLoss)
-
-# Plot the forecasts
-l_plot
-
-## Remove process added
-rmprocs(2:N_CORE)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;!-- ![alt text](https://raw.githubusercontent.com/lucabrugnolini/ForecastingCombinations.jl/loss_function_implementation/test/nfp.png) --&gt;
-
+&lt;p&gt;Forecasting US non-farm-payroll one and two months ahead &lt;code&gt;H = [1,2]&lt;/code&gt; using a dataset containing 116 US variables taken from &lt;a href=&#34;https://amstat.tandfonline.com/doi/abs/10.1080/07350015.2015.1086655&#34;&gt;McCracken and Ng (2015)&lt;/a&gt;. &lt;code&gt;iBest&lt;/code&gt; is set to 16. The code below is an example of parallelization on &lt;code&gt;N_CORE&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;addprocs(N_CORE)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; ForecastingCombinations
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; CSV, DataFrames, GLM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; mae(vX&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Vector&lt;/span&gt;,vY&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Vector&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mean(abs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;(vX&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;vY))      &lt;span style=&#34;color:#75715e&#34;&gt;## MAE loss function &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; rmse(vX&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Vector&lt;/span&gt;,vY&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Array&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sqrt(mean((vX&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;vY)&lt;span style=&#34;color:#f92672&#34;&gt;.^&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)) &lt;span style=&#34;color:#75715e&#34;&gt;## RMSE loss function&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; fLoss &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [mae rmse] &lt;span style=&#34;color:#75715e&#34;&gt;## Vector of loss functions &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; sStart_s &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;01/01/15&amp;#34;&lt;/span&gt;                   &lt;span style=&#34;color:#75715e&#34;&gt;## This is the beginning of the out-of-sample window&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; iSymbol &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:NFP&lt;/span&gt;                          &lt;span style=&#34;color:#75715e&#34;&gt;## Target variable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; vSymbol &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;:Date&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:NFP&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:NFP_bb_median&lt;/span&gt;] &lt;span style=&#34;color:#75715e&#34;&gt;## Variables to be removed from the dataset (non-numerical and dep. var.)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; H &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]                               &lt;span style=&#34;color:#75715e&#34;&gt;## Out-of-sample horizon&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; iBest &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;                               &lt;span style=&#34;color:#75715e&#34;&gt;## iBest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; ncomb_load &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; iBest                      &lt;span style=&#34;color:#75715e&#34;&gt;## TODO: remove this option&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; dfData &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; CSV&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read(joinpath(Pkg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dir(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ForecastingCombinations&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;data.csv&amp;#34;&lt;/span&gt;), header &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; true)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; iStart &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; find(dfData[&lt;span style=&#34;color:#e6db74&#34;&gt;:Date&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;.==&lt;/span&gt; sStart_s)[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## computes the two steps variable selection&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;l_plot,r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,fLoss)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## `fforecast` uses results previously stored with `sforecast`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;l_plot,r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,fLoss)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Plot the forecasts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;l_plot
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Remove process added&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rmprocs(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;N_CORE)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;In case one is interested in predicting probabilities, as the US probability of recession, simply include a link function in &lt;code&gt;sforecast&lt;/code&gt; or &lt;code&gt;fforecast&lt;/code&gt;, and use a binary variable as dependent variable.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;@everywhere const l = ProbitLink() # link function for probability model
-
-## computes the two steps variable selection
-l_plot,r = sforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,l,fLoss)
-## `fforecast` uses results previously stored with `sforecast`
-l_plot,r = fforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,l,fLoss)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;!-- ![alt text](https://raw.githubusercontent.com/lucabrugnolini/ForecastingCombinations.jl/loss_function_implementation/test/recession.png) --&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@everywhere&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; l &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ProbitLink() &lt;span style=&#34;color:#75715e&#34;&gt;# link function for probability model&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## computes the two steps variable selection&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;l_plot,r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,l,fLoss)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## `fforecast` uses results previously stored with `sforecast`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;l_plot,r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,l,fLoss)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-
 &lt;p&gt;Brugnolini L. (2018) &amp;ldquo;Forecasting Deflation Probability in the EA: A Combinatoric Approach.&amp;rdquo; &lt;em&gt;Central Bank of Malta Working Paper&lt;/em&gt;, 01/2018.&lt;/p&gt;
-
 &lt;p&gt;McCracken, Michael W., and Serena Ng.(2016) &amp;ldquo;FRED-MD: A Monthly Database for Macroeconomic Research.&amp;rdquo; Journal of Business &amp;amp; Economic Statistics 34.4:574-589.&lt;/p&gt;
 </description>
     </item>
@@ -120,113 +102,106 @@ l_plot,r = fforecast(dfData,vSymbol,iSymbol,H,iStart,iBest,ncomb_load,l,fLoss)
       <link>https://lucabrugnolini.github.io/code/var/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
       <guid>https://lucabrugnolini.github.io/code/var/</guid>
-      <description>
-
-&lt;h4 id=&#34;vector-autoregressive-models-for-julia-var-jl-https-github-com-lucabrugnolini-var-jl&#34;&gt;Vector autoregressive models for Julia (&lt;a href=&#34;https://github.com/lucabrugnolini/VAR.jl&#34; target=&#34;_blank&#34;&gt;VAR.jl&lt;/a&gt;)&lt;/h4&gt;
-
+      <description>&lt;h4 id=&#34;vector-autoregressive-models-for-julia-varjlhttpsgithubcomlucabrugnolinivarjl&#34;&gt;Vector autoregressive models for Julia (&lt;a href=&#34;https://github.com/lucabrugnolini/VAR.jl&#34;&gt;VAR.jl&lt;/a&gt;)&lt;/h4&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;Pkg.clone(&amp;quot;https://github.com/lucabrugnolini/VectorAutoregressions.jl&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Pkg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;clone(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://github.com/lucabrugnolini/VectorAutoregressions.jl&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This package is a work in progress for the estimation and identification of Vector Autoregressive (VAR) models.&lt;/p&gt;
-
 &lt;h2 id=&#34;status&#34;&gt;Status&lt;/h2&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; VAR
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; VAR(1) form&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Lag-length selection&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; AIC&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; AICC&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; BIC&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; HQC&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; VAR impulse response function (IRFs)&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Identification
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Reduce form&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cholesky&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Long-run restrictions&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Sign restrictions&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Heteroskedasticity&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; External instruments (ex. high-frequency,narrative)&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Confidence bands
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Asymptotic&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Bootstrap&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Bootstrap-after-bootstrap&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Forecasting&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; BVAR&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; FAVAR&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Local projection IRFs
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Lag-length selection&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Confidence bands
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Standard&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Bootstrap&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Bayesian Local Projection&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; VAR
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; VAR(1) form&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Lag-length selection
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; AIC&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; AICC&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; BIC&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; HQC&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; VAR impulse response function (IRFs)
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Identification
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Reduce form&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Cholesky&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Long-run restrictions&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Sign restrictions&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Heteroskedasticity&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; External instruments (ex. high-frequency,narrative)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Confidence bands
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Asymptotic&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Bootstrap&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Bootstrap-after-bootstrap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Forecasting
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; BVAR&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; FAVAR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Local projection IRFs
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Lag-length selection&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Confidence bands
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Standard&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Bootstrap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Bayesian Local Projection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf. bands.
-using VectorAutoregressions, Plots
-
-y = readdlm(joinpath(Pkg.dir(&amp;quot;VectorAutoregressions&amp;quot;),&amp;quot;test&amp;quot;,&amp;quot;cholvar_test_data.csv&amp;quot;), &#39;,&#39;) #read example file with data
-intercept = false #intercept in the estimation
-p = 2 #select lag-length
-H = 15 # IRFs horizon
-nrep = 500 #bootstrap sample
-
-# Fit VAR(2) to data
-V = VAR(y,p,intercept)
-
-# Estimate IRFs - Cholesky identification
-T,K = size(y) 
-mIRFa = IRFs_a(V,H,intercept) #asymptotic conf. bandf
-mIRFb = IRFs_b(V,H,nrep,intercept) #bootstrap conf. bands
-
-# Plot irf + asy ci
-pIRF_asy = plot(layout = grid(K,K));
-[plot!(pIRF_asy, [mIRFa.CI.CIl[i,:] mIRFa.IRF[i,:] mIRFa.CI.CIh[i,:]], color = [&amp;quot;red&amp;quot; &amp;quot;red&amp;quot; &amp;quot;red&amp;quot;],
-line = [:dash :solid :dash], legend = false, subplot = i) for i in 1:K^2]
-gui(pIRF_asy)
-
-# Plot irf + bootstraped ci
-pIRF_boot = plot(layout = grid(K,K));
-[plot!(pIRF_boot, [mIRFb.CI.CIl[i,:] mIRFb.IRF[i,:] mIRFb.CI.CIh[i,:]], color = [&amp;quot;blue&amp;quot; &amp;quot;blue&amp;quot; &amp;quot;blue&amp;quot;],
-line = [:dash :solid :dash], legend = false, subplot = i) for i in 1:K^2]
-gui(pIRF_boot)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;More in details, &lt;code&gt;y&lt;/code&gt; is a matrix with data, &lt;code&gt;p&lt;/code&gt; is the lag-length of the VAR we fit to the data and &lt;code&gt;i&lt;/code&gt; is a Boolean for including an intercept (default is true). &lt;code&gt;VAR(y,p,intercept)&lt;/code&gt; returns a fitted VAR(&lt;code&gt;p&lt;/code&gt;) model in &lt;code&gt;V&lt;/code&gt; with the following structure:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;type VAR
-  Y::Array # dep. variables
-  X::Array # covariates
-  β::Array # parameters
-  ϵ::Array # residuals
-  Σ::Array # VCV matrix
-  p::Int64 # lag-length
-  i::Bool # true or false for including an intercept (default is true)
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can access to each element writing &lt;code&gt;V.&lt;/code&gt; and than the element you are interested in (for example for the covariates &lt;code&gt;V.X&lt;/code&gt;).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Example: fit a VAR(`p`) to the data and derive structural IRFs with asymptotic and bootstrap conf. bands.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; VectorAutoregressions, Plots
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; readdlm(joinpath(Pkg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dir(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;VectorAutoregressions&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;cholvar_test_data.csv&amp;#34;&lt;/span&gt;), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;#read example file with data&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; false &lt;span style=&#34;color:#75715e&#34;&gt;#intercept in the estimation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;p &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;#select lag-length&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;H &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# IRFs horizon&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nrep &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;#bootstrap sample&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Fit VAR(2) to data&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;V &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; VAR(y,p,intercept)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Estimate IRFs - Cholesky identification&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;T,K &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; size(y) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mIRFa &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; IRFs_a(V,H,intercept) &lt;span style=&#34;color:#75715e&#34;&gt;#asymptotic conf. bandf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mIRFb &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; IRFs_b(V,H,nrep,intercept) &lt;span style=&#34;color:#75715e&#34;&gt;#bootstrap conf. bands&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Plot irf + asy ci&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pIRF_asy &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; plot(layout &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; grid(K,K));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[plot!(pIRF_asy, [mIRFa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CI&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CIl[i,&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;] mIRFa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;IRF[i,&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;] mIRFa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CI&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CIh[i,&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;]], color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;red&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;red&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;red&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;line &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;:dash&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:solid&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:dash&lt;/span&gt;], legend &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; false, subplot &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;K&lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gui(pIRF_asy)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Plot irf + bootstraped ci&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pIRF_boot &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; plot(layout &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; grid(K,K));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[plot!(pIRF_boot, [mIRFb&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CI&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CIl[i,&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;] mIRFb&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;IRF[i,&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;] mIRFb&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CI&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CIh[i,&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;]], color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blue&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blue&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blue&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;line &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;:dash&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:solid&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:dash&lt;/span&gt;], legend &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; false, subplot &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;K&lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gui(pIRF_boot)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;More in details, &lt;code&gt;y&lt;/code&gt; is a matrix with data, &lt;code&gt;p&lt;/code&gt; is the lag-length of the VAR we fit to the data and &lt;code&gt;i&lt;/code&gt; is a Boolean for including an intercept (default is true). &lt;code&gt;VAR(y,p,intercept)&lt;/code&gt; returns a fitted VAR(&lt;code&gt;p&lt;/code&gt;) model in &lt;code&gt;V&lt;/code&gt; with the following structure:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;type VAR
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Y&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Array&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# dep. variables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  X&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Array&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# covariates&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  β&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Array&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ϵ&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Array&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# residuals&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Σ&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Array&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# VCV matrix&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  p&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Int64&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# lag-length&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  i&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Bool&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# true or false for including an intercept (default is true)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can access to each element writing &lt;code&gt;V.&lt;/code&gt; and than the element you are interested in (for example for the covariates &lt;code&gt;V.X&lt;/code&gt;).&lt;/p&gt;
 </description>
     </item>
     
