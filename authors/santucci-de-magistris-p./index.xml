@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Santucci de Magistris P. | Luca Brugnolini</title>
+    <title>Santucci De Magistris P. | Luca Brugnolini</title>
     <link>https://lucabrugnolini.github.io/authors/santucci-de-magistris-p./</link>
       <atom:link href="https://lucabrugnolini.github.io/authors/santucci-de-magistris-p./index.xml" rel="self" type="application/rss+xml" />
-    <description>Santucci de Magistris P.</description>
+    <description>Santucci De Magistris P.</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2017 Luca Brugnolini</copyright>
     <image>
       <url>https://lucabrugnolini.github.io/img/icon-192.png</url>
-      <title>Santucci de Magistris P.</title>
+      <title>Santucci De Magistris P.</title>
       <link>https://lucabrugnolini.github.io/authors/santucci-de-magistris-p./</link>
     </image>
+    
+    <item>
+      <title>Bayesian Flexible Local Projection</title>
+      <link>https://lucabrugnolini.github.io/publication/article_10_bflp/</link>
+      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://lucabrugnolini.github.io/publication/article_10_bflp/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Flexible Bayesian Local Projection</title>
